@@ -208,6 +208,123 @@
     .st.form { background: rgba(245,158,11,0.15); color: #fcd34d; }
     .st.wait { background: rgba(148,163,184,0.15); color: #cbd5e1; }
 
+
+    /* Counsel call sheet */
+    .callout {
+      margin: 0 0 1rem;
+      padding: 0.95rem 1.1rem;
+      border: 1px solid rgba(45,212,191,0.35);
+      background: linear-gradient(135deg, rgba(45,212,191,0.14), rgba(56,189,248,0.08));
+      border-radius: 12px;
+      color: #d8fff8;
+      font-size: 1.02rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .callout .reward {
+      display: block;
+      margin-top: 0.45rem;
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .leads {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 0 0 1.1rem;
+    }
+    @media (max-width: 900px) {
+      .leads { grid-template-columns: 1fr; }
+    }
+    .lead {
+      background: linear-gradient(160deg, var(--panel2), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0.95rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .lead .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .lead h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+    .lead ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .lead li { margin: 0.2rem 0; }
+    .lead .why {
+      margin-top: auto;
+      padding-top: 0.55rem;
+      border-top: 1px solid var(--line);
+      color: #fde68a;
+      font-size: 0.86rem;
+    }
+    .lead .why strong { color: var(--hot); }
+    .flags {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.5rem;
+      margin: 0 0 1rem;
+      padding: 0;
+      list-style: none;
+      counter-reset: flag;
+    }
+    .flags li {
+      counter-increment: flag;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.65rem 0.8rem 0.65rem 2.6rem;
+      position: relative;
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+    .flags li::before {
+      content: counter(flag);
+      position: absolute;
+      left: 0.7rem;
+      top: 0.6rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background: rgba(245,158,11,0.18);
+      color: var(--hot);
+      font-weight: 800;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .anchors, .close-ask {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      max-width: 85ch;
+    }
+    .close-ask {
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--accent2);
+      background: rgba(56,189,248,0.08);
+      border-radius: 0 10px 10px 0;
+      color: #bae6fd;
+    }
+
     footer {
       margin: 2.5rem 0 2rem;
       padding-top: 1rem;
@@ -234,6 +351,69 @@
   </header>
 
   <main class="wrap">
+
+    <section id="call-sheet">
+      <h2>Counsel call sheet · graft open leads</h2>
+      <p class="section-sub">Quick reference for talks with counsel. Indicators only — not proven fraud. Anonymous descriptors for open leads. Public Medicare payment data.</p>
+
+      <p class="callout">
+        I'm seeking contingency counsel to file as relator under the False Claims Act — the government typically awards the whistleblower 15 to 30 percent of what it recovers.
+        <span class="reward">Under the False Claims Act, if the government recovers on a qui tam case you bring, you as the relator get 15 to 30 percent of that recovery.</span>
+      </p>
+
+      <p class="section-sub" style="margin-bottom:0.65rem">Across the screen, median Medicare graft payment per patient is about fifty-nine thousand dollars ($59,000). Patient counts below are lower bounds from public files.</p>
+
+      <div class="leads">
+        <article class="lead">
+          <div class="tag">Lead A</div>
+          <h3>California internal-medicine biller</h3>
+          <ul>
+            <li>About $117 million Medicare graft payments in 2024, up about $74 million from the prior year</li>
+            <li>About 403 distinct Medicare patients</li>
+            <li>About $290,000 per patient — about <strong>5×</strong> the $59,000 screen average</li>
+          </ul>
+          <p class="why">Stands out because of the <strong>massive total billing amount</strong> (largest exposure among non-Florida providers with no public charges).</p>
+        </article>
+        <article class="lead">
+          <div class="tag">Lead B</div>
+          <h3>California general-surgery first-year biller</h3>
+          <ul>
+            <li>About $73 million in 2024 with no graft payments the year before</li>
+            <li>About 28 graft patients</li>
+            <li>About $2.6 million per patient — about <strong>44×</strong> the screen average</li>
+            <li>About 2,000 square centimeters of graft product per graft patient</li>
+          </ul>
+          <p class="why">Stands out because of the <strong>extreme number of graft units per patient relative to the patient count</strong>.</p>
+        </article>
+        <article class="lead">
+          <div class="tag">Lead C</div>
+          <h3>Oklahoma family-practice biller</h3>
+          <ul>
+            <li>About $79 million in 2024, up from about $5 million (about a 15× jump)</li>
+            <li>About 146 graft patients</li>
+            <li>About $542,000 per patient — about <strong>9×</strong> the screen average</li>
+            <li>Bills ultra-rare product codes, including one used by <strong>only two billers nationally</strong></li>
+          </ul>
+          <p class="why">Stands out because of those <strong>ultra-rare codes</strong>.</p>
+        </article>
+      </div>
+
+      <h3 style="margin:0 0 0.5rem; font-size:1.05rem;">Six red flags</h3>
+      <p class="section-sub" style="margin-bottom:0.65rem">Five of these six show up across many of the top open leads.</p>
+      <ol class="flags">
+        <li>First-year billing surge</li>
+        <li>Rare-code clustering</li>
+        <li>High-priced product line matching charged cases (including about $2,000 per square centimeter pricing like the product line described in the Yukee indictment)</li>
+        <li>Extreme units or square centimeters per beneficiary</li>
+        <li>Geographic clustering with other high billers or already-charged providers</li>
+        <li>Year-over-year fee spikes</li>
+      </ol>
+
+      <p class="anchors"><strong>Public pattern anchors</strong> (already charged — names OK): Yukee, Jenson, Kinds, and Denny illustrate the same graft-billing pattern family in public charging documents.</p>
+
+      <p class="close-ask">Want the firm to sign under a confidentiality agreement so provider names, entity maps, and full analysis can be shared after a conflict check. Public Medicare payment data only; no targets contacted; indicators not proven fraud.</p>
+    </section>
+
     <section>
       <h2>Program × fraud-type matrix</h2>
       <p class="section-sub">Columns are major federal lending and grant streams. Rows are common FCA patterns. Green cells are places our screens lit up. Gray cells are open hunt territory — not searched yet or no hit in our files.</p>
