@@ -1,0 +1,7 @@
+# Local Netlify folder
+.netlify
+.build_ignore/
+leads.html
+leads.plaintext.html
+*.plaintext.html
+.staticrypt.json
